@@ -10,6 +10,10 @@ keywords = ["verbose", "verbosity", "level", "log", "logging", "cli"]
 categories = ["command-line-utilities", "configuration", "rust-patterns"]
 license-file = "LICENSE"
 
+[badges]
+travis-ci = { repository = "guangie88/vlog-rs" }
+codecov = { repository = "guangie88/vlog-rs" }
+
 # [dev-dependencies]
 # gag = "0.1.9"
 

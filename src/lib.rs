@@ -8,6 +8,39 @@
 //! Useful for CLI applications. The default verbosity level is 0, and the
 //! supported max verbosity level is 3, which is equivalent to `-vvv` flags seen
 //! in most Linux CLI applications.
+//!
+//! # Example
+//! ```
+//! #[macro_use]
+//! extern crate vlog;
+//!
+//! use vlog::{get_verbosity_level, set_verbosity_level};
+//!
+//! fn main() {
+//!     // default verbosity level is 0
+//!     assert_eq!(0, get_verbosity_level());
+//!     v0!("v0 okay");
+//!     v1!("v1 won't print");
+//!     v2!("v2 won't print");
+//!     v3!("v3 won't print");
+//!
+//!     // set custom verbosity level
+//!     set_verbosity_level(1);
+//!     assert_eq!(1, get_verbosity_level());
+//!     v0!("v0 okay");
+//!     v1!("v1 okay");
+//!     v2!("v2 won't print");
+//!     v3!("v3 won't print");
+//!
+//!      // set custom max verbosity level
+//!      set_verbosity_level(3);
+//!      assert_eq!(3, get_verbosity_level());
+//!      v0!("v0 okay");
+//!      v1!("v1 okay");
+//!      v2!("v2 okay");
+//!      v3!("v3 okay");
+//! }
+//! ```
 
 // TODO: `gag` does not seem to work properly anymore
 // #[cfg(test)]
@@ -19,11 +52,38 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 static mut VERBOSITY_LEVEL: AtomicUsize = AtomicUsize::new(0);
 
 /// Sets the application verbosity level atomically. This method is thread-safe.
+///
+/// # Arguments
+/// * `verbosity_level` - Verbosity level value. While there is no check on the
+/// upper bound, the expected max level value is 3.
+///
+/// # Example
+/// ```
+/// use vlog::set_verbosity_level;
+///
+/// // min verbosity level
+/// set_verbosity_level(0);
+///
+/// // max verbosity level
+/// set_verbosity_level(3);
+/// ```
 pub fn set_verbosity_level(verbosity_level: usize) {
     unsafe { VERBOSITY_LEVEL.store(verbosity_level, Ordering::Relaxed) }
 }
 
 /// Gets the application verbosity level atomically. This method is thread-safe.
+///
+/// # Example
+/// ```
+/// use vlog::{get_verbosity_level, set_verbosity_level};
+///
+/// // default verbosity level
+/// assert_eq!(0, get_verbosity_level());
+///
+/// // custom verbosity level
+/// set_verbosity_level(1);
+/// assert_eq!(1, get_verbosity_level());
+/// ```
 pub fn get_verbosity_level() -> usize {
     unsafe { VERBOSITY_LEVEL.load(Ordering::Relaxed) }
 }
