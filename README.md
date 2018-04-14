@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/guangie88/vlog-rs.svg?branch=master)](https://travis-ci.org/guangie88/vlog-rs)
 [![codecov](https://codecov.io/gh/guangie88/vlog-rs/branch/master/graph/badge.svg)](https://codecov.io/gh/guangie88/vlog-rs)
+[![Crates.io](https://img.shields.io/crates/v/vlog.svg)](https://crates.io/crates/vlog)
+[![Docs.rs](https://docs.rs/vlog/badge.svg)](https://docs.rs/vlog)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Macros to do stdout / stderr logs based on verbosity level.
