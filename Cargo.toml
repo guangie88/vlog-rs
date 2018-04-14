@@ -1,0 +1,18 @@
+[package]
+name = "vlog"
+version = "0.1.0"
+authors = ["Chen Weiguang <chen.weiguang@gmail.com>"]
+description = "Macros to do stdout / stderr logs based on verbosity level."
+documentation = "https://docs.rs/vlog"
+repository = "https://github.com/guangie88/vlog-rs"
+readme = "README.md"
+keywords = ["verbose", "verbosity", "level", "log", "logging", "cli"]
+categories = ["command-line-utilities", "configuration", "rust-patterns"]
+license-file = "LICENSE"
+
+# [dev-dependencies]
+# gag = "0.1.9"
+
+[lib]
+name = "vlog"
+path = "src/lib.rs"
