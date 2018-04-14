@@ -32,13 +32,13 @@
 //!     v2!("v2 won't print");
 //!     v3!("v3 won't print");
 //!
-//!      // set custom max verbosity level
-//!      set_verbosity_level(3);
-//!      assert_eq!(3, get_verbosity_level());
-//!      v0!("v0 okay");
-//!      v1!("v1 okay");
-//!      v2!("v2 okay");
-//!      v3!("v3 okay");
+//!     // set custom max verbosity level
+//!     set_verbosity_level(3);
+//!     assert_eq!(3, get_verbosity_level());
+//!     v0!("v0 okay");
+//!     v1!("v1 okay");
+//!     v2!("v2 okay");
+//!     v3!("v3 okay");
 //! }
 //! ```
 
