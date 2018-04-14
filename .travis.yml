@@ -49,7 +49,12 @@ script:
 
 after_success:
   - |
-    if [ "$COVERAGE" = "true" ]; then
+    if [ "$LINT" = "true" ] && [ -n "$TRAVIS_TAG" ]; then
+      # publish when this is a new tag
+      cargo login "$CRATES_TOKEN"
+      cargo publish
+    elif [ "$COVERAGE" = "true" ] && [ -z "$TRAVIS_TAG" ]; then
+      # only check coverage in non-tag commits
       docker run --security-opt seccomp=unconfined -v "$PWD:/volume" \
         guangie88/ubuntu-cargo-tarpaulin:xenial-stable "
           cargo tarpaulin --all --out Xml \
