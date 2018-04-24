@@ -1,13 +1,13 @@
 [package]
 name = "vlog"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Chen Weiguang <chen.weiguang@gmail.com>"]
 description = "Macros to do stdout / stderr logs based on verbosity level."
 documentation = "https://docs.rs/vlog"
 repository = "https://github.com/guangie88/vlog-rs"
 readme = "README.md"
 keywords = ["verbose", "verbosity", "level", "log", "cli"]
-categories = ["command-line-utilities", "config", "rust-patterns"]
+categories = ["command-line-interface", "config", "rust-patterns"]
 license = "MIT"
 
 [badges]
