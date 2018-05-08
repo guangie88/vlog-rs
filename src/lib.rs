@@ -42,10 +42,6 @@
 //! }
 //! ```
 
-// TODO: `gag` does not work on tests
-#[cfg(test)]
-extern crate gag;
-
 #[macro_use]
 mod macros;
 
