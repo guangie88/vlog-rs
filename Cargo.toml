@@ -1,6 +1,6 @@
 [package]
 name = "vlog"
-version = "0.1.3"
+version = "0.1.4"
 authors = ["Chen Weiguang <chen.weiguang@gmail.com>"]
 description = "Macros to do stdout / stderr logs based on verbosity level."
 documentation = "https://docs.rs/vlog"
@@ -14,8 +14,8 @@ license = "MIT"
 travis-ci = { repository = "guangie88/vlog-rs" }
 codecov = { repository = "guangie88/vlog-rs" }
 
-# [dev-dependencies]
-# gag = "0.1.10"
+[dev-dependencies]
+gag = "0.1.10"
 
 [lib]
 name = "vlog"

@@ -36,7 +36,7 @@ script:
     echo "Coverage not dealing with 'script'"
   else
     cargo doc --all
-    cargo test --all --verbose
+    cargo test --all --verbose -- --nocapture
   fi
 
 after_success:
