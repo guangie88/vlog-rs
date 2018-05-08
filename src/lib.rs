@@ -42,6 +42,9 @@
 //! }
 //! ```
 
+#[cfg(test)]
+extern crate gag;
+
 #[macro_use]
 mod macros;
 
