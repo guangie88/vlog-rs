@@ -32,11 +32,6 @@ fn main() {
     v2!("v2 stdout won't print");
     v3!("v3 stdout won't print");
 
-    ve0!("ve0 stderr prints");
-    ve1!("ve1 stderr won't print");
-    ve2!("ve2 stderr won't print");
-    ve3!("ve3 stderr won't print");
-
     // set custom verbosity level
     set_verbosity_level(1);
     assert_eq!(1, get_verbosity_level());
@@ -45,11 +40,6 @@ fn main() {
     v1!("{} stdout prints", "v1");
     v2!("{} stdout won't print", "v2");
     v3!("{} stdout won't print", "v3");
-
-    ve0!("{} stderr prints", "ve0");
-    ve1!("{} stderr prints", "ve1");
-    ve2!("{} stderr won't print", "ve2");
-    ve3!("{} stderr won't print", "ve3");
 
     // set custom max verbosity level
     set_verbosity_level(3);
@@ -60,6 +50,7 @@ fn main() {
     v2!("{} stdout prints", "v2");
     v3!("{} stdout prints", "v3");
 
+    // stderr macros also available
     ve0!("{} stderr prints", "ve0");
     ve1!("{} stderr prints", "ve1");
     ve2!("{} stderr prints", "ve2");

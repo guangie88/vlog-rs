@@ -41,10 +41,15 @@ script:
 
 after_success:
 - |
-  if [ "$PUBLISH" = "true" ] && [ -n "$TRAVIS_TAG" ]; then
-    # publish when this is a new tag
+  if [ "$PUBLISH" = "true" ]; then
     cargo login "$CRATES_TOKEN"
-    cargo publish
+
+    if [ -n "$TRAVIS_TAG" ]; then
+      # publish when this is a new tag
+      cargo publish --verbose
+    else
+      cargo publish --dry-run --verbose
+    fi
   elif [ "$COVERAGE" = "true" ] && [ -z "$TRAVIS_TAG" ]; then
     docker run --security-opt seccomp=unconfined -v "$PWD:/volume" \
       guangie88/ubuntu-cargo-tarpaulin:xenial-stable "
