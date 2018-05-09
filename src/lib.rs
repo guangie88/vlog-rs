@@ -19,26 +19,35 @@
 //! fn main() {
 //!     // default verbosity level is 0
 //!     assert_eq!(0, get_verbosity_level());
-//!     v0!("v0 prints");
-//!     v1!("v1 won't print");
-//!     v2!("v2 won't print");
-//!     v3!("v3 won't print");
+//!
+//!     v0!("v0 stdout prints");
+//!     v1!("v1 stdout won't print");
+//!     v2!("v2 stdout won't print");
+//!     v3!("v3 stdout won't print");
 //!
 //!     // set custom verbosity level
 //!     set_verbosity_level(1);
 //!     assert_eq!(1, get_verbosity_level());
-//!     v0!("{} prints", "v0");
-//!     v1!("{} prints", "v1");
-//!     v2!("{} won't print", "v2");
-//!     v3!("{} won't print", "v3");
+//!
+//!     v0!("{} stdout prints", "v0");
+//!     v1!("{} stdout prints", "v1");
+//!     v2!("{} stdout won't print", "v2");
+//!     v3!("{} stdout won't print", "v3");
 //!
 //!     // set custom max verbosity level
 //!     set_verbosity_level(3);
 //!     assert_eq!(3, get_verbosity_level());
-//!     v0!("{} prints", "v0");
-//!     v1!("{} prints", "v1");
-//!     v2!("{} prints", "v2");
-//!     v3!("{} prints", "v3");
+//!
+//!     v0!("{} stdout prints", "v0");
+//!     v1!("{} stdout prints", "v1");
+//!     v2!("{} stdout prints", "v2");
+//!     v3!("{} stdout prints", "v3");
+//!
+//!     // stderr macros also available
+//!     ve0!("{} stderr prints", "ve0");
+//!     ve1!("{} stderr prints", "ve1");
+//!     ve2!("{} stderr prints", "ve2");
+//!     ve3!("{} stderr prints", "ve3");
 //! }
 //! ```
 
